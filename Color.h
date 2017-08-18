@@ -22,6 +22,9 @@ class Color
 	// Lightens current color (all channels) by a given literal.
 	void lighten(color_t);
 
+	// percentage - 0-100 value
+	void blend(const Color* other, byte percentage);
+
 	color_t getRed() const { return this->red; }
 	color_t getGreen() const { return this->green; }
 	color_t getBlue() const { return this->blue; }
