@@ -29,7 +29,7 @@ class Color
 	color_t getGreen() const { return this->green; }
 	color_t getBlue() const { return this->blue; }
 
-	operator long_color_t() const { return ((long_color_t)this->red << 16) | ((long_color_t)this->green << 8) | this->blue; }
+	operator long_color_t() const;
 };
 
 #endif

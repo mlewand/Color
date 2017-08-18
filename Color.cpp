@@ -56,6 +56,11 @@ Color* Color::blend(const Color* other, byte percentage)
 	return this;
 }
 
+Color::operator long_color_t() const
+{
+	return ((long_color_t)this->red << 16) | ((long_color_t)this->green << 8) | this->blue;
+}
+
 // Do not leave preprocessor garbage.
 #undef _color_max
 #undef _color_min
