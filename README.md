@@ -5,9 +5,9 @@ A simple C++ type representing the color.
 ## Usage
 
 ```cpp
+// Adjust the include path, depending on where you put the library files.
 #include "./libs/Color/Color.cpp"
 
-// ...
 Color *testColor = new Color(0x050403);
 
 Serial.println((uint32_t)testColor);
