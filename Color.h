@@ -7,23 +7,23 @@ typedef uint32_t long_color_t;
 
 class Color
 {
-  private:
+private:
 	color_t red;
 	color_t green;
 	color_t blue;
 
-  public:
+public:
 	Color(color_t, color_t, color_t);
 	Color(long_color_t);
 
 	// Darkens current color (all channels) by a given literal.
-	Color* darken(color_t);
+	Color *darken(color_t);
 
 	// Lightens current color (all channels) by a given literal.
-	Color* lighten(color_t);
+	Color *lighten(color_t);
 
 	// percentage - 0-100 value
-	Color* blend(const Color* other, byte percentage);
+	Color *blend(const Color *other, byte percentage);
 
 	color_t getRed() const { return this->red; }
 	color_t getGreen() const { return this->green; }

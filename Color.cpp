@@ -26,7 +26,7 @@ Color::Color(long_color_t rgbColor)
 	this->blue = rgbColor & 255;
 }
 
-Color* Color::darken(color_t darkenLiteral)
+Color *Color::darken(color_t darkenLiteral)
 {
 	this->red = (red > darkenLiteral) ? red - darkenLiteral : 0;
 	this->green = (green > darkenLiteral) ? green - darkenLiteral : 0;
@@ -35,7 +35,7 @@ Color* Color::darken(color_t darkenLiteral)
 	return this;
 }
 
-Color* Color::lighten(color_t lightenLiteral)
+Color *Color::lighten(color_t lightenLiteral)
 {
 	this->red = (red + lightenLiteral <= 255) ? red + lightenLiteral : 255;
 	this->green = (green + lightenLiteral <= 255) ? green + lightenLiteral : 255;
@@ -44,7 +44,7 @@ Color* Color::lighten(color_t lightenLiteral)
 	return this;
 }
 
-Color* Color::blend(const Color* other, byte percentage)
+Color *Color::blend(const Color *other, byte percentage)
 {
 	percentage = _color_min(percentage, 100);
 	percentage = _color_max(percentage, 0);
