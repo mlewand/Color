@@ -30,6 +30,7 @@ public:
 	color_t getBlue() const { return this->blue; }
 
 	operator long_color_t() const;
+	Color &operator=(const Color &otherColor) { return Color(otherColor); };
 };
 
 #endif
