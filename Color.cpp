@@ -26,11 +26,15 @@ Color::Color(long_color_t rgbColor)
 	this->blue = rgbColor & 255;
 }
 
-Color::Color(const Color &otherColor)
+Color & Color::operator=(const Color &otherColor)
 {
-	this->red = otherColor->red;
-	this->green = otherColor->green;
-	this->blue = otherColor->blue;
+	if ( this != &otherColor ) {
+		this->red = otherColor.red;
+		this->green = otherColor.green;
+		this->blue = otherColor.blue;
+	}
+
+	return *this;
 }
 
 Color *Color::darken(color_t darkenLiteral)
