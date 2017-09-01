@@ -5,8 +5,8 @@
 // ESP8266 driver defines it's own max implementation, which prevents me from using pure stdlib implementation.
 // https://github.com/esp8266/Arduino/issues/398
 #include <stdlib.h>
-#define _color_max( a, b ) std::max( (color_t)a, (color_t)b )
-#define _color_min( a, b ) std::min( (color_t)a, (color_t)b )
+#define _color_max( a, b ) std::max( ( color_t )a, ( color_t )b )
+#define _color_min( a, b ) std::min( ( color_t )a, ( color_t )b )
 #else
 #define _color_max( a, b ) max( a, b )
 #define _color_min( a, b ) min( a, b )
