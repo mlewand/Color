@@ -17,13 +17,13 @@ class Color
 	Color(long_color_t);
 
 	// Darkens current color (all channels) by a given literal.
-	Color *darken(color_t);
+	Color& darken(color_t);
 
 	// Lightens current color (all channels) by a given literal.
-	Color *lighten(color_t);
+	Color& lighten(color_t);
 
 	// percentage - 0-100 value - percentage of current color to be left in blend color.
-	Color *blend(const Color *other, byte percentage);
+	Color& blend(const Color *other, byte percentage);
 
 	color_t getRed() const
 	{
