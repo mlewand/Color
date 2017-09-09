@@ -2,6 +2,8 @@
 #ifndef COLOR_H
 #define COLOR_H
 
+#include "Arduino.h"
+
 typedef byte color_t;
 typedef uint32_t long_color_t;
 
