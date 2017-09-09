@@ -38,34 +38,34 @@ Color &Color::operator=(const Color &otherColor)
 	return *this;
 }
 
-Color *Color::darken(color_t darkenLiteral)
+Color &Color::darken(color_t darkenLiteral)
 {
 	this->red = (red > darkenLiteral) ? red - darkenLiteral : 0;
 	this->green = (green > darkenLiteral) ? green - darkenLiteral : 0;
 	this->blue = (blue > darkenLiteral) ? blue - darkenLiteral : 0;
 
-	return this;
+	return *this;
 }
 
-Color *Color::lighten(color_t lightenLiteral)
+Color &Color::lighten(color_t lightenLiteral)
 {
 	this->red = (red + lightenLiteral <= 255) ? red + lightenLiteral : 255;
 	this->green = (green + lightenLiteral <= 255) ? green + lightenLiteral : 255;
 	this->blue = (blue + lightenLiteral <= 255) ? blue + lightenLiteral : 255;
 
-	return this;
+	return *this;
 }
 
-Color *Color::blend(const Color *other, byte percentage)
+Color &Color::blend(const Color &other, byte percentage)
 {
 	percentage = _color_min(percentage, 100);
 	percentage = _color_max(percentage, 0);
 
-	this->red = ((double)other->red * percentage / 100) + ((double)this->red * (100 - percentage) / 100);
-	this->green = ((double)other->green * percentage / 100) + ((double)this->green * (100 - percentage) / 100);
-	this->blue = ((double)other->blue * percentage / 100) + ((double)this->blue * (100 - percentage) / 100);
+	this->red = ((double)other.red * percentage / 100) + ((double)this->red * (100 - percentage) / 100);
+	this->green = ((double)other.green * percentage / 100) + ((double)this->green * (100 - percentage) / 100);
+	this->blue = ((double)other.blue * percentage / 100) + ((double)this->blue * (100 - percentage) / 100);
 
-	return this;
+	return *this;
 }
 
 Color::operator long_color_t() const
