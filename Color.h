@@ -25,7 +25,7 @@ class Color
 	Color &lighten(color_t);
 
 	// percentage - 0-100 value - percentage of current color to be left in blend color.
-	Color &blend(const Color &other, byte percentage);
+	virtual Color &blend(const Color &other, byte percentage);
 
 	color_t getRed() const
 	{
@@ -40,7 +40,7 @@ class Color
 		return this->blue;
 	}
 
-	operator long_color_t() const;
+	virtual operator long_color_t() const;
 	Color &operator=(const Color &otherColor);
 };
 
