@@ -1,6 +1,6 @@
 
-#ifndef COLOR_H
-#define COLOR_H
+#ifndef RELATIVELY_UNIQUE_84193_COLOR_H
+#define RELATIVELY_UNIQUE_84193_COLOR_H
 
 #include "Arduino.h"
 
